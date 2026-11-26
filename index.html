@@ -546,6 +546,7 @@ function graficaPrecio(cont, id, h) {
   });
   hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); ocultarTip(cont); });
   cont.append(svg);
+  if (cont.previousElementSibling && cont.previousElementSibling.classList.contains("legend")) cont.previousElementSibling.remove();
   cont.before(el("div", { class: "legend" }, el("span", {}, el("i", { style: "background:#03264f" }), "Precio observado (SNIIM)"),
     el("span", {}, el("i", { style: "background:#c98500" }), "Pronóstico"), el("span", {}, el("i", { class: "box", style: "background:#fbb02d;opacity:.35" }), "Rango donde cae 8 de cada 10 veces")));
 }
